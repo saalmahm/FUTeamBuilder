@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: rgb(135, 148, 159);
+    background-color: black;
     margin: 5px;
     padding: 20px;
     width: 100%;
@@ -18,12 +18,16 @@ header {
     color: white;
     font-size: large;
     z-index: 1000;
-    opacity: 0.8;
 }
-.head{
+#logo{
+    width: 160px;
+    height: 50px;
+}
+.head {
     display: flex;
     gap: 40px;
 }
+
 .cont {
     display: flex;
     margin-top: 90px;
@@ -42,70 +46,38 @@ header {
     width: 100%;
 }
 
-#GK, #CB1, #CB2, #LB, #RB, #CM1, #CM2, #CM3, #LW, #RW, #ST {
+.player-container {
     position: absolute;
-    width: 100px;
-    height: 125px;
+    width: 130px;  /* Uniformiser la taille */
+    height: 130px; /* Uniformiser la taille */
+}
+
+.player-container img {
+    width: 100%;
+    margin: auto;
+    display: block;
+    height: 100%;
     box-shadow: 20px;
 }
 
-#GK {
-    top: 470px;
-    left: 45%;
+.player-container img:last-child {
+    width: auto;
 }
 
-#CB1 {
-    top: 380px;
-    left: 29%;
-}
-
-#CB2 {
-    top: 380px;
-    left: 60%;
-}
-
-#LB {
-    top: 380px;
-    left: 8%;
-}
-
-#RB {
-    top: 380px;
-    left: 80%;
-}
-
-#CM1 {
-    top: 190px;
-    left: 29%;
-}
-
-#CM2 {
-    top: 190px;
-    left: 60%;
-}
-
-#CM3 {
-    top: 190px;
-    left: 80%;
-}
-
-#LW {
-    top: 190px;
-    left: 7%;
-}
-
-#RW {
-    top: 0px;
-    left: 60%;
-}
-
-#ST {
-    top: 0px;
-    left: 29%;
-}
+#GK-container { top: 470px; left: 45%; }
+#CB1-container { top: 380px; left: 29%; }
+#CB2-container { top: 380px; left: 60%; }
+#LB-container { top: 380px; left: 8%; }
+#RB-container { top: 380px; left: 80%; }
+#CM1-container { top: 190px; left: 29%; }
+#CM2-container { top: 190px; left: 60%; }
+#CM3-container { top: 190px; left: 80%; }
+#LW-container { top: 190px; left: 7%; }
+#RW-container { top: 0px; left: 60%; }
+#ST-container { top: 0px; left: 29%; }
 
 .chang {
-    background-color: rgb(135, 148, 159);
+    background-color: black;
     opacity: 0.8;
     width: 20%;
     height: 500px;
@@ -116,8 +88,26 @@ header {
     grid-gap: 10px; /* Espacement entre les images */
 }
 
-.chang img {
-    width: 130px;
-    height: 130px;
+.card-container {
+    position: relative; /* Positionner les éléments enfants par rapport à ce conteneur */
+    width: 130px; /* Uniformiser la taille */
+    height: 130px; /* Uniformiser la taille */
     box-shadow: 20px;
+}
+
+.card-container img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 20px;
+}
+
+.plus {
+    position: absolute;
+    top: 30%; /* Placer l'image 'plus' au centre de la carte */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrer exactement l'image */
+    max-width: 70px; /* Empêche l'image de dépasser cette largeur */
+    max-height: 70px; /* Empêche l'image de dépasser cette hauteur */
+    opacity: 0.8; /* Pour qu'elle soit un peu transparente */
+    cursor: pointer; /* Optionnel, pour indiquer que l'icône est cliquable */
 }
