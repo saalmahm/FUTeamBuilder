@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
 </head>
-
 <body>
     <header class="head">
-        <label for="1">Nom d'équipe:</label>
-        <input type="text" id="1">
-        <label for="2">Formation:</label>
-        <select name="" id="2">
-            <option value="4-4-2">4-4-2</option>
-            <option value="4-3-3">4-3-3</option>
-        </select>
+        <div class="">
+            <label for="teamName">Nom d'équipe:</label>
+            <input type="text" id="teamName">
+            <button class="btn">Appliquer</button>
+        </div>
+        <div>
+            <label for="2">Formation:</label>
+            <select name="" id="2">
+                <option value="4-4-2">4-4-2</option>
+                <option value="4-3-3">4-3-3</option>
+            </select>
+        </div>
+        <div>
+            <button class="btn" id="ajout">
+                Ajouter un joueur
+            </button>
+        </div>
     </header>
 
     <div class="cont">
         <div class="terrain">
+            <div id="teamNameDisplay" class="team-name"></div>
             <img src="images/train.png" alt="le terrain">
             <div class="player-container" id="GK-container">
                 <img src="images/gk.png" id="GK">
@@ -102,6 +112,8 @@
             </div>
         </div>
     </div>
+    <div class="modal">
+        <div class="modal-content"> 
+    </div>
 </body>
-
 </html>

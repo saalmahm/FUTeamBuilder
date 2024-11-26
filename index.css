@@ -1,10 +1,18 @@
 body {
-    background-image: url("background.jpg");
+    background-image: url("images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     margin: 0;
     padding: 0;
+}
+
+.btn {
+    background-color: blue;
+    color: white;
+    border-radius: 3px;
+    border: 0;
+    padding: 3px;
 }
 
 header {
@@ -19,18 +27,20 @@ header {
     font-size: large;
     z-index: 1000;
 }
-#logo{
+
+#logo {
     width: 160px;
     height: 50px;
 }
+
 .head {
     display: flex;
-    gap: 40px;
+    gap: 350px;
 }
 
 .cont {
     display: flex;
-    margin-top: 90px;
+    margin-top: 60px;
     padding: 20px;
     gap: 90px;
 }
@@ -46,10 +56,22 @@ header {
     width: 100%;
 }
 
+.team-name {
+    position: absolute;
+    top: 20px;
+    left: 70px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+}
+
 .player-container {
     position: absolute;
-    width: 130px;  /* Uniformiser la taille */
-    height: 130px; /* Uniformiser la taille */
+    width: 130px;
+    height: 130px;
 }
 
 .player-container img {
@@ -61,20 +83,63 @@ header {
 }
 
 .player-container img:last-child {
-    width: auto;
+    width: auto !important;
 }
 
-#GK-container { top: 470px; left: 45%; }
-#CB1-container { top: 380px; left: 29%; }
-#CB2-container { top: 380px; left: 60%; }
-#LB-container { top: 380px; left: 8%; }
-#RB-container { top: 380px; left: 80%; }
-#CM1-container { top: 190px; left: 29%; }
-#CM2-container { top: 190px; left: 60%; }
-#CM3-container { top: 190px; left: 80%; }
-#LW-container { top: 190px; left: 7%; }
-#RW-container { top: 0px; left: 60%; }
-#ST-container { top: 0px; left: 29%; }
+#GK-container {
+    top: 470px;
+    left: 45%;
+}
+
+#CB1-container {
+    top: 380px;
+    left: 29%;
+}
+
+#CB2-container {
+    top: 380px;
+    left: 60%;
+}
+
+#LB-container {
+    top: 380px;
+    left: 8%;
+}
+
+#RB-container {
+    top: 380px;
+    left: 80%;
+}
+
+#CM1-container {
+    top: 190px;
+    left: 29%;
+}
+
+#CM2-container {
+    top: 190px;
+    left: 60%;
+}
+
+#CM3-container {
+    top: 190px;
+    left: 80%;
+}
+
+#LW-container {
+    top: 190px;
+    left: 7%;
+}
+
+#RW-container {
+    top: 0px;
+    left: 60%;
+}
+
+#ST-container {
+    top: 0px;
+    left: 29%;
+}
 
 .chang {
     background-color: black;
@@ -84,14 +149,14 @@ header {
     padding: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-    grid-gap: 10px; /* Espacement entre les images */
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
 }
 
 .card-container {
-    position: relative; /* Positionner les éléments enfants par rapport à ce conteneur */
-    width: 130px; /* Uniformiser la taille */
-    height: 130px; /* Uniformiser la taille */
+    position: relative;
+    width: 130px;
+    height: 130px;
     box-shadow: 20px;
 }
 
@@ -103,11 +168,79 @@ header {
 
 .plus {
     position: absolute;
-    top: 30%; /* Placer l'image 'plus' au centre de la carte */
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centrer exactement l'image */
-    max-width: 70px; /* Empêche l'image de dépasser cette largeur */
-    max-height: 70px; /* Empêche l'image de dépasser cette hauteur */
-    opacity: 0.8; /* Pour qu'elle soit un peu transparente */
-    cursor: pointer; /* Optionnel, pour indiquer que l'icône est cliquable */
+    transform: translate(-50%, -50%);
+    max-width: 70px;
+    max-height: 70px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0; 
+    background-color: rgba(74, 24, 120, 0.5); 
+    justify-content: center;
+    align-items: center; 
+}
+
+.modal-content {
+    background-color: rgb(255, 255, 255); 
+    width: 80%; 
+    max-height: 70%; 
+    margin: 20px; 
+    padding: 20px; 
+    border-radius: 10px; 
+    overflow-y: auto; 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; 
+}
+
+.player-card {
+    background-color: #ffffff; 
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s; 
+}
+
+.player-card:hover {
+    transform: scale(1.05); 
+    background-color: rgb(83, 12, 238);
+    border-color: yellow;
+}
+
+.player-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0; 
+    margin-bottom: 10px;
+}
+
+.player-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.player-card p {
+    margin: 5px 0;
+    color: #666;
+}
+.player-card p:hover{
+    color: white;
+}
+
+.player-card .stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.player-card .stats div {
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
 }
