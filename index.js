@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const plusImages = document.querySelectorAll(".player-container .plus");
+    const plusImages = document.querySelectorAll(".player-container .plus, .chang .plus");
     const modal = document.querySelector(".modal");
     const modalContent = document.querySelector(".modal-content");
     const button = document.querySelector(".btn");
@@ -8,8 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     plusImages.forEach(img => {
         img.addEventListener("click", function() {
-            modal.style.display = "flex";  
-            loadPlayers();
+            const parentClass = this.closest('.player-container') ? 'player-container' : 'chang';
+            const position = parentClass === 'player-container' ? this.previousElementSibling.id : null;
+            modal.style.display = "flex";
+            loadPlayers(position);
         });
     });
 
@@ -18,12 +20,19 @@ document.addEventListener("DOMContentLoaded", () => {
         teamNameDisplay.textContent = val;
     });
 
-    function loadPlayers() {
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    function loadPlayers(position) {
         fetch("http://localhost:3000/players")
             .then(response => response.json())
             .then(data => {
-                modalContent.innerHTML = ""; // Clear previous content
-                data.forEach(player => {
+                modalContent.innerHTML = ""; // Vider le contenu précédent
+                const filteredData = position ? data.filter(player => player.position === position) : data;
+                filteredData.forEach(player => {
                     const playerCard = document.createElement("div");
                     playerCard.classList.add("player-card");
                     playerCard.innerHTML = `
