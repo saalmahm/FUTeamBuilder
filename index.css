@@ -1,14 +1,9 @@
 body {
-    background-image: url("images/background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
+    background-color: black;
 }
 
 .btn {
-    background-color: blue;
+    background-color: green;
     color: white;
     border-radius: 3px;
     border: 0;
@@ -16,7 +11,7 @@ body {
 }
 
 header {
-    background-color: black;
+    background-color: rgb(31, 79, 31);
     margin: 5px;
     padding: 20px;
     width: 100%;
@@ -79,7 +74,6 @@ header {
     margin: auto;
     display: block;
     height: 100%;
-    box-shadow: 20px;
 }
 
 .player-container img:last-child {
@@ -142,16 +136,18 @@ header {
 }
 
 .chang {
-    background-color: black;
-    opacity: 0.8;
-    width: 20%;
-    height: 500px;
-    padding: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(30, 68, 30);
+    width: 25%;
+    height: 550px;
+    padding: 10px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    border-radius: 10%;
+    grid-template-columns: repeat(3, 110px);
     grid-gap: 10px;
+    border: 1px solid white;
+    margin-top: 45px;
 }
+
 
 .card-container {
     position: relative;
@@ -176,47 +172,49 @@ header {
     opacity: 0.8;
     cursor: pointer;
 }
+
 .modal {
     display: none;
     position: fixed;
-    inset: 0; 
-    background-color: rgba(74, 24, 120, 0.5); 
+    inset: 0;
+    background-color: rgba(74, 24, 120, 0.5);
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
 .modal-content {
-    background-color: rgb(255, 255, 255); 
-    width: 80%; 
-    max-height: 70%; 
-    margin: 20px; 
-    padding: 20px; 
-    border-radius: 10px; 
-    overflow-y: auto; 
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    max-height: 70%;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 30px; 
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
 }
 
 .player-card {
-    background-color: #ffffff; 
+    background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.2s; 
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 20px;
+    transition: transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
 }
 
 .player-card:hover {
-    transform: scale(1.05); 
-    background-color: rgb(83, 12, 238);
-    border-color: yellow;
-}
+    transform: scale(1.05);
+box-shadow: black;}
 
 .player-card img {
-    width: 100%;
-    border-radius: 10px 10px 0 0; 
-    margin-bottom: 10px;
+    width: 50%;
+    border-radius: 10px;
 }
 
 .player-card h3 {
@@ -227,10 +225,7 @@ header {
 
 .player-card p {
     margin: 5px 0;
-    color: #666;
-}
-.player-card p:hover{
-    color: white;
+    color: black;
 }
 
 .player-card .stats {
@@ -243,4 +238,70 @@ header {
     text-align: center;
     font-size: 0.9em;
     color: #555;
+}
+
+.add-player-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(74, 24, 120, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.add-player-modal .modal-content {
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.close-add-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.close-add-modal:hover {
+    background-color: darkred;
+}
+
+#playerForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#playerForm input,
+#playerForm button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#playerForm button {
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#playerForm button:hover {
+    background-color: darkblue;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
 </head>
+
 <body>
     <header class="head">
         <div class="">
@@ -31,17 +33,17 @@
     <div class="cont">
         <div class="terrain">
             <div id="teamNameDisplay" class="team-name"></div>
-            <img src="images/train.png" alt="le terrain">
+            <img src="images/terrain.png" alt="le terrain">
             <div class="player-container" id="GK-container">
                 <img src="images/gk.png" id="GK">
                 <img src="images/plus.png" alt="ajouter" class="plus">
             </div>
             <div class="player-container" id="CB1-container">
-                <img src="images/cb.png" id="CB1">
+                <img src="images/cb.png" id="CB">
                 <img src="images/plus.png" alt="ajouter" class="plus">
             </div>
             <div class="player-container" id="CB2-container">
-                <img src="images/cb.png" id="CB2">
+                <img src="images/cb.png" id="CB">
                 <img src="images/plus.png" alt="ajouter" class="plus">
             </div>
             <div class="player-container" id="LB-container">
@@ -53,15 +55,15 @@
                 <img src="images/plus.png" alt="ajouter" class="plus">
             </div>
             <div class="player-container" id="CM1-container">
-                <img src="images/cm.png" id="CM1">
+                <img src="images/cm.png" id="CM">
                 <img src="images/plus.png" alt="ajouter" class="plus">
             </div>
             <div class="player-container" id="CM2-container">
-                <img src="images/cm.png" id="CM2">
+                <img src="images/cm.png" id="CM">
                 <img src="images/plus.png" alt="ajouter" class="plus">
             </div>
             <div class="player-container" id="CM3-container">
-                <img src="images/cm.png" id="CM3">
+                <img src="images/cm.png" id="CM">
                 <img src="images/plus.png" alt="ajouter" class="plus">
             </div>
             <div class="player-container" id="LW-container">
@@ -113,7 +115,44 @@
         </div>
     </div>
     <div class="modal">
-        <div class="modal-content"> 
+        <div class="modal-content"> <button class="close-modal">&times;</button>
+        </div>
+    </div>
+    <div class="add-player-modal">
+        <div class="modal-content"> <button class="close-add-modal">&times;</button> <!-- Bouton de fermeture -->
+            <h2>Ajouter un nouveau joueur</h2>
+            <form id="playerForm">
+                <label for="playerName">Nom:</label>
+                <input type="text" id="playerName" name="playerName" required><br>
+                <label for="playerPhoto">Photo URL:</label>
+                <input type="url" id="playerPhoto" name="playerPhoto" required><br>
+                <label for="playerPosition">Position:</label>
+                <input type="text" id="playerPosition" name="playerPosition" required><br>
+                <labe for="playerNationality">Nationalité:</label>
+                    <input type="text" id="playerNationality" name="playerNationality" required><br>
+                    <label for="playerFlag">Flag URL:</label>
+                    <input type="url" id="playerFlag" name="playerFlag" required><br>
+                    <label for="playerClub">Club:</label>
+                    <input type="text" id="playerClub" name="playerClub" required><br>
+                    <label for="playerLogo">Logo URL:</label> <input type="url" id="playerLogo" name="playerLogo"
+                        required><br>
+                    <label for="playerRating">Note:</label>
+                    <input type="number" id="playerRating" name="playerRating" required><br>
+                    <label for="playerPace">Vitesse:</label> <input type="number" id="playerPace" name="playerPace"
+                        required><br> <label for="playerShooting">Tir:</label>
+                    <input type="number" id="playerShooting" name="playerShooting" required><br>
+                    <label for="playerPassing">Passes:</label>
+                    <input type="number" id="playerPassing" name="playerPassing" required><br>
+                    <label for="playerDribbling">Dribbles:</label> <input type="number" id="playerDribbling"
+                        name="playerDribbling" required><br>
+                    <label for="playerDefending">Défense:</label>
+                    <input type="number" id="playerDefending" name="playerDefending" required><br>
+                    <label for="playerPhysical">Physique:</label>
+                    <input type="number" id="playerPhysical" name="playerPhysical" required><br>
+                    <button type="submit">Ajouter</button>
+            </form>
+        </div>
     </div>
 </body>
+
 </html>
