@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     plusImages.forEach(img => {
         img.addEventListener("click", function() {
-            const parentClass = this.closest('.player-container') ? 'player-container' : 'chang';
-            selectedPosition = parentClass === 'player-container' ? this.previousElementSibling.id : null;
+            const parentContainer = this.closest('.player-container, .card-container');
+            selectedPosition = parentContainer ? parentContainer.id : null;
             modal.style.display = "flex";
             loadPlayers(selectedPosition);
         });
@@ -84,8 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch("http://localhost:3000/players")
             .then(response => response.json())
             .then(data => {
-                modalContent.innerHTML = ""; 
-                const filteredData = position ? data.filter(player => player.position === position) : data;
+                modalContent.innerHTML = ""; // Vider le contenu précédent
+                // Filtrer les joueurs en fonction de la position
+                const filteredData = position.includes("container") ? data.filter(player => player.position === position.split('-')[0]) : data;
                 filteredData.forEach(player => {
                     const playerCard = document.createElement("div");
                     playerCard.classList.add("player-card");
@@ -109,14 +110,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function selectPlayer(player) {
         if (selectedPosition) {
-            const container = document.getElementById(selectedPosition).parentElement;
+            const container = document.getElementById(selectedPosition);
             const plusImage = container.querySelector('.plus');
             if (plusImage) {
                 plusImage.src = player.photo; 
-                plusImage.classList.toggle("player-image");
-
+                plusImage.classList.toggle("player-image");           
             }
         }
     }
-    
 });

@@ -171,7 +171,6 @@ header {
     max-height: 70px;
     cursor: pointer;
 }
-
 .modal {
     display: none;
     position: fixed;
