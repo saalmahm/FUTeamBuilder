@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeAddModalButton = document.querySelector(".close-add-modal");
     const playerForm = document.getElementById("playerForm");
     let selectedPosition = null;
+    const selectedPlayers = new Set();
 
     plusImages.forEach(img => {
         img.addEventListener("click", function() {
@@ -84,9 +85,12 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch("http://localhost:3000/players")
             .then(response => response.json())
             .then(data => {
-                modalContent.innerHTML = ""; // Vider le contenu précédent
-                // Filtrer les joueurs en fonction de la position
-                const filteredData = position.includes("container") ? data.filter(player => player.position === position.split('-')[0]) : data;
+                modalContent.innerHTML = ""; 
+
+                // Exclure les joueurs déjà sélectionnés sur le terrain
+                const availablePlayers = data.filter(player => !selectedPlayers.has(player.name));
+
+                const filteredData = position.includes("container") ? availablePlayers.filter(player => player.position === position.split('-')[0]) : availablePlayers;
                 filteredData.forEach(player => {
                     const playerCard = document.createElement("div");
                     playerCard.classList.add("player-card");
@@ -114,7 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const plusImage = container.querySelector('.plus');
             if (plusImage) {
                 plusImage.src = player.photo; 
-                plusImage.classList.toggle("player-image");           
+                plusImage.classList.toggle("player-image");  
+                selectedPlayers.add(player.name);
             }
         }
     }
