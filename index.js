@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     ajoutButton.addEventListener("click", () => {
-        addPlayerModal.style.display = "flex"; // Afficher le modal d'ajout de joueur
+        addPlayerModal.style.display = "flex"; 
     });
 
     closeAddModalButton.addEventListener("click", () => {
-        addPlayerModal.style.display = "none"; // Fermer le modal d'ajout de joueur
+        addPlayerModal.style.display = "none"; 
     });
 
     modal.addEventListener("click", (e) => {
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch("http://localhost:3000/players")
             .then(response => response.json())
             .then(data => {
-                modalContent.innerHTML = ""; // Vider le contenu précédent
+                modalContent.innerHTML = ""; 
                 const filteredData = position ? data.filter(player => player.position === position) : data;
                 filteredData.forEach(player => {
                     const playerCard = document.createElement("div");

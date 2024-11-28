@@ -250,9 +250,9 @@ box-shadow: black;}
 
 .add-player-modal .modal-content {
     background-color: rgb(255, 255, 255);
-    width: 50%;
+    width: 25%;
     margin: 20px;
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -269,10 +269,7 @@ box-shadow: black;}
     width: 30px;
     height: 30px;
     font-size: 20px;
-    line-height: 30px;
-    text-align: center;
     cursor: pointer;
-    transition: background-color 0.2s;
 }
 
 .close-add-modal:hover {
@@ -290,6 +287,7 @@ box-shadow: black;}
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+    width: 320px;
     border: 1px solid #ddd;
 }
 
@@ -306,5 +304,5 @@ box-shadow: black;}
 }
 .player-image {
     top: 25%;
-    width: 800px !important; /* Ajustez cette valeur selon vos besoins */
+    width: 800px !important; 
 }
