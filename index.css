@@ -169,7 +169,6 @@ header {
     transform: translate(-50%, -50%);
     max-width: 70px;
     max-height: 70px;
-    opacity: 0.8;
     cursor: pointer;
 }
 
@@ -304,4 +303,8 @@ box-shadow: black;}
 
 #playerForm button:hover {
     background-color: darkblue;
+}
+.player-image {
+    top: 25%;
+    width: 800px !important; /* Ajustez cette valeur selon vos besoins */
 }

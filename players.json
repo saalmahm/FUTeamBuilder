@@ -37,7 +37,7 @@
     {
       "name": "Kevin De Bruyne",
       "photo": "https://cdn.sofifa.net/players/192/985/25_120.png",
-      "position": "CM",
+      "position": "CM1",
       "nationality": "Belgium",
       "flag": "https://cdn.sofifa.net/flags/be.png",
       "club": "Manchester City",
@@ -71,7 +71,7 @@
     {
       "name": "Virgil van Dijk",
       "photo": "https://cdn.sofifa.net/players/203/376/25_120.png",
-      "position": "CB",
+      "position": "CB1",
       "nationality": "Netherlands",
       "flag": "https://cdn.sofifa.net/flags/nl.png",
       "club": "Liverpool",
@@ -88,7 +88,7 @@
     {
       "name": "Antonio Rudiger",
       "photo": "https://cdn.sofifa.net/players/205/452/25_120.png",
-      "position": "CB",
+      "position": "CB2",
       "nationality": "Germany",
       "flag": "https://cdn.sofifa.net/flags/de.png",
       "club": "Real Madrid",
@@ -139,7 +139,7 @@
     {
       "name": "Joshua Kimmich",
       "photo": "https://cdn.sofifa.net/players/212/622/25_120.png",
-      "position": "CM",
+      "position": "CM1",
       "nationality": "Germany",
       "flag": "https://cdn.sofifa.net/flags/de.png",
       "club": "Bayern Munich",
@@ -173,7 +173,7 @@
     {
       "name": "Luka Modrić",
       "photo": "https://cdn.sofifa.net/players/177/003/25_120.png",
-      "position": "CM",
+      "position": "CM2",
       "nationality": "Croatia",
       "flag": "https://cdn.sofifa.net/flags/hr.png",
       "club": "Real Madrid",
@@ -309,7 +309,7 @@
     {
       "name": "Bruno Fernandes",
       "photo": "https://cdn.sofifa.net/players/212/198/25_120.png",
-      "position": "CM",
+      "position": "CM3",
       "nationality": "Portugal",
       "flag": "https://cdn.sofifa.net/flags/pt.png",
       "club": "Manchester United",
@@ -410,7 +410,7 @@
     {
       "name": "Ismael Saibari",
       "photo": "https://cdn.sofifa.net/players/259/480/25_120.png",
-      "position": "CM",
+      "position": "CM3",
       "nationality": "Morocco",
       "flag": "https://cdn.sofifa.net/flags/ma.png",
       "club": "PSV",
@@ -457,6 +457,23 @@
       "dribbling": "84",
       "defending": "34",
       "physical": "77"
+    },
+    {
+      "id": "22b1",
+      "name": "salma",
+      "photo": "https://t4.ftcdn.net/jpg/05/85/80/01/360_F_585800164_y7T6DimEn1Ke3pkJpoyu1Jxqv7oPs53v.jpg",
+      "position": "LW",
+      "nationality": "marocaine",
+      "flag": "https://cdn.sofifa.net/flags/ar.png",
+      "club": "Inter Miaml",
+      "logo": "https://cdn.sofifa.net/meta/team/239235/120.png",
+      "rating": "5",
+      "pace": "6",
+      "shooting": "5",
+      "passing": "2",
+      "dribbling": "4",
+      "defending": "3",
+      "physical": "-4"
     }
   ]
 }

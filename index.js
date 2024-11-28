@@ -9,13 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const teamNameDisplay = document.getElementById("teamNameDisplay");
     const closeAddModalButton = document.querySelector(".close-add-modal");
     const playerForm = document.getElementById("playerForm");
+    let selectedPosition = null;
 
     plusImages.forEach(img => {
         img.addEventListener("click", function() {
             const parentClass = this.closest('.player-container') ? 'player-container' : 'chang';
-            const position = parentClass === 'player-container' ? this.previousElementSibling.id : null;
+            selectedPosition = parentClass === 'player-container' ? this.previousElementSibling.id : null;
             modal.style.display = "flex";
-            loadPlayers(position);
+            loadPlayers(selectedPosition);
         });
     });
 
@@ -25,11 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     ajoutButton.addEventListener("click", () => {
-        addPlayerModal.style.display = "flex"; 
+        addPlayerModal.style.display = "flex"; // Afficher le modal d'ajout de joueur
     });
 
     closeAddModalButton.addEventListener("click", () => {
-        addPlayerModal.style.display = "none"; 
+        addPlayerModal.style.display = "none"; // Fermer le modal d'ajout de joueur
     });
 
     modal.addEventListener("click", (e) => {
@@ -83,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch("http://localhost:3000/players")
             .then(response => response.json())
             .then(data => {
-                modalContent.innerHTML = ""; 
+                modalContent.innerHTML = ""; // Vider le contenu précédent
                 const filteredData = position ? data.filter(player => player.position === position) : data;
                 filteredData.forEach(player => {
                     const playerCard = document.createElement("div");
@@ -94,13 +95,28 @@ document.addEventListener("DOMContentLoaded", () => {
                             <h3>${player.name}</h3>
                             <p>Position: ${player.position}</p>
                             <p>Score: ${player.rating}</p>
-
-                           
                         </div>
                     `;
+                    playerCard.addEventListener("click", function() {
+                        selectPlayer(player);
+                        modal.style.display = "none";
+                    });
                     modalContent.appendChild(playerCard);
                 });
             })
             .catch(error => console.error("Erreur lors de la récupération des données :", error));
     }
+
+    function selectPlayer(player) {
+        if (selectedPosition) {
+            const container = document.getElementById(selectedPosition).parentElement;
+            const plusImage = container.querySelector('.plus');
+            if (plusImage) {
+                plusImage.src = player.photo; 
+                plusImage.classList.toggle("player-image");
+
+            }
+        }
+    }
+    
 });
