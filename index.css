@@ -326,3 +326,47 @@ box-shadow: black;}
 .delete-player-button:hover {
     background-color: darkred;
 }
+@media screen and (max-width: 1024px) {
+    .head {
+        gap: 225px;
+    }
+
+    .cont {
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
+    }
+
+    .terrain {
+        width: 100%;
+    }
+
+    .player-container, .card-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .chang {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .plus {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    .modal-content {
+        width: 70%;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 00px;
+    }
+
+    .add-player-modal .modal-content {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
