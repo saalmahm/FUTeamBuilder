@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function loadPlayers(position) {
-        fetch("http://localhost:3000/players")
+        fetch("./players.json")
             .then(response => response.json())
             .then(data => {
                 modalContent.innerHTML = ""; 
