@@ -7,13 +7,14 @@ body {
     color: white;
     border-radius: 3px;
     border: 0;
-    padding: 3px;
+    padding: 7px;
+    border-radius: 5px;
 }
 
 header {
     background-color: rgb(31, 79, 31);
     margin: 5px;
-    padding: 20px;
+    padding: 15px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -30,7 +31,7 @@ header {
 
 .head {
     display: flex;
-    gap: 350px;
+    gap: 300px;
 }
 
 .cont {
@@ -164,7 +165,7 @@ header {
 
 .plus {
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 70px;
@@ -301,7 +302,10 @@ box-shadow: black;}
 #playerForm button:hover {
     background-color: darkblue;
 }
-.player-image {
-    top: 25%;
-    width: 800px !important; 
+.delete-icon{
+    height: 40px;
+    width: 40px;
+}
+.delete-icon{
+  position: relative;
 }

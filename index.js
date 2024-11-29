@@ -87,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 modalContent.innerHTML = ""; 
 
-                // Exclure les joueurs déjà sélectionnés sur le terrain
                 const availablePlayers = data.filter(player => !selectedPlayers.has(player.name));
 
                 const filteredData = position.includes("container") ? availablePlayers.filter(player => player.position === position.split('-')[0]) : availablePlayers;
@@ -118,7 +117,21 @@ document.addEventListener("DOMContentLoaded", () => {
             const plusImage = container.querySelector('.plus');
             if (plusImage) {
                 plusImage.src = player.photo; 
-                plusImage.classList.toggle("player-image");  
+                plusImage.classList.toggle("player-image");
+
+                let deleteButton = container.querySelector(".delete-player-button");
+                if (!deleteButton) {
+                    deleteButton = document.createElement("button");
+                    deleteButton.innerText = "Supprimer";
+                    deleteButton.classList.add("delete-player-button");
+                    deleteButton.addEventListener("click", function() {
+                        plusImage.src = "images/plus.png";
+                        plusImage.classList.remove("player-image");
+                        container.removeChild(deleteButton);
+                        selectedPlayers.delete(player.name);
+                    });
+                    container.appendChild(deleteButton);
+                }
                 selectedPlayers.add(player.name);
             }
         }
