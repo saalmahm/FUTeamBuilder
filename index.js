@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let deleteButton = container.querySelector(".delete-player-button");
                 if (!deleteButton) {
                     deleteButton = document.createElement("button");
-                    deleteButton.innerText = "Supprimer";
+                    deleteButton.innerText = "X";
                     deleteButton.classList.add("delete-player-button");
                     deleteButton.addEventListener("click", function() {
                         plusImage.src = "images/plus.png";

@@ -309,3 +309,20 @@ box-shadow: black;}
 .delete-icon{
   position: relative;
 }
+.delete-player-button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 1px;
+}
+
+.delete-player-button:hover {
+    background-color: darkred;
+}
