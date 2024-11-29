@@ -394,7 +394,7 @@ box-shadow: black;}
         width: 100%;
         height: auto;
         padding: 5px;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(7, 1fr);
     }
 
     .plus {
@@ -413,22 +413,18 @@ box-shadow: black;}
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 400px) {
     .head {
         flex-direction: column;
-        gap: 1px;
+        gap: 15px;
     }
 
     .cont {
-        margin-top: 100px;
+        margin-top: 150px;
         flex-direction: column;
         align-items: center;
         padding: 10px;
         gap: 20px;
-    }
-
-    .terrain {
-        width: 100%;
     }
 
     .player-container, .card-container {
@@ -440,7 +436,7 @@ box-shadow: black;}
         width: 100%;
         height: auto;
         padding: 5px;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .plus {
@@ -481,3 +477,15 @@ box-shadow: black;}
 #adda{
     width: 70px;
 }
+
+#CM1-container, #CM2-container, #CM3-container , #LW-container{
+    top: 100px;  
+}
+
+#CB1-container,  #CB2-container , #LB-container, #RB-container{
+    top:   180px;
+}
+
+#GK-container {
+    top: 230px;
+} 
