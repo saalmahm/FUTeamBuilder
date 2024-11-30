@@ -454,15 +454,15 @@ box-shadow: black;}
         padding: 5px;
     }
     #CM1-container, #CM2-container, #CM3-container , #LW-container{
-        top: 130px;  
+        top: 90px;  
     }
 
     #CB1-container,  #CB2-container , #LB-container, #RB-container{
-        top: 220px;
+        top: 170px;
     }
     
     #GK-container {
-        top: 280px;
+        top: 230px;
     } 
     #playerForm input,
 #playerForm button {
@@ -478,14 +478,3 @@ box-shadow: black;}
     width: 70px;
 }
 
-#CM1-container, #CM2-container, #CM3-container , #LW-container{
-    top: 100px;  
-}
-
-#CB1-container,  #CB2-container , #LB-container, #RB-container{
-    top:   180px;
-}
-
-#GK-container {
-    top: 230px;
-} 
