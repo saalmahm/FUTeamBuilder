@@ -454,15 +454,15 @@ box-shadow: black;}
         padding: 5px;
     }
     #CM1-container, #CM2-container, #CM3-container , #LW-container{
-        top: 90px;  
+        top: 75px;  
     }
 
     #CB1-container,  #CB2-container , #LB-container, #RB-container{
-        top: 170px;
+        top: 150px;
     }
     
     #GK-container {
-        top: 230px;
+        top: 200px;
     } 
     #playerForm input,
 #playerForm button {
