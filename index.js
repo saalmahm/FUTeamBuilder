@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectedPlayers = new Set();
 
     plusImages.forEach(img => {
-        img.addEventListener("click", function() {
+        img.addEventListener("click", function () {
             const parentContainer = this.closest('.player-container, .card-container');
             selectedPosition = parentContainer ? parentContainer.id : null;
             modal.style.display = "flex";
@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     ajoutButton.addEventListener("click", () => {
-        addPlayerModal.style.display = "flex"; 
+        addPlayerModal.style.display = "flex";
     });
 
     closeAddModalButton.addEventListener("click", () => {
-        addPlayerModal.style.display = "none"; 
+        addPlayerModal.style.display = "none";
     });
 
     modal.addEventListener("click", (e) => {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    playerForm.addEventListener("submit", function(e) {
+    playerForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
         const newPlayer = {
@@ -73,19 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             body: JSON.stringify(newPlayer)
         })
-        .then(response => response.json())
-        .then(data => {
-            addPlayerModal.style.display = "none";
-            alert("Le joueur a été ajouté avec succès!");
-        })
-        .catch(error => console.error("Erreur lors de l'ajout du joueur :", error));
+            .then(response => response.json())
+            .then(data => {
+                addPlayerModal.style.display = "none";
+                alert("Le joueur a été ajouté avec succès!");
+            })
+            .catch(error => console.error("Erreur lors de l'ajout du joueur :", error));
     });
 
     function loadPlayers(position) {
         fetch("http://localhost:3000/players")
             .then(response => response.json())
             .then(data => {
-                modalContent.innerHTML = ""; 
+                modalContent.innerHTML = "";
 
                 const availablePlayers = data.filter(player => !selectedPlayers.has(player.name));
 
@@ -97,11 +97,18 @@ document.addEventListener("DOMContentLoaded", () => {
                         <img src="${player.photo}" alt="${player.name}">
                         <div>
                             <h3>${player.name}</h3>
-                            <p>Position: ${player.position}</p>
-                            <p>Score: ${player.rating}</p>
+                            <p><strong>Position:</strong> ${player.position}</p>
+                            <p><strong>Score:</strong> ${player.rating}</p>
+                            <p><strong>Pace:</strong> ${player.pace}</p>
+                            <p><strong>Shooting:</strong> ${player.shooting}</p>
+                            <p><strong>Passing:</strong> ${player.passing}</p>
+                            <p><strong>Dribbling:</strong> ${player.dribbling}</p>
+                            <p><strong>Defending:</strong> ${player.defending}</p>
+                            <p><strong>Physical:</strong> ${player.physical}</p>
+
                         </div>
                     `;
-                    playerCard.addEventListener("click", function() {
+                    playerCard.addEventListener("click", function () {
                         selectPlayer(player);
                         modal.style.display = "none";
                     });
@@ -116,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const container = document.getElementById(selectedPosition);
             const plusImage = container.querySelector('.plus');
             if (plusImage) {
-                plusImage.src = player.photo; 
+                plusImage.src = player.photo;
                 plusImage.classList.toggle("player-image");
 
                 let deleteButton = container.querySelector(".delete-player-button");
@@ -124,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     deleteButton = document.createElement("button");
                     deleteButton.innerText = "X";
                     deleteButton.classList.add("delete-player-button");
-                    deleteButton.addEventListener("click", function() {
+                    deleteButton.addEventListener("click", function () {
                         plusImage.src = "images/plus.png";
                         plusImage.classList.remove("player-image");
                         container.removeChild(deleteButton);
