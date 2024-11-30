@@ -1,4 +1,4 @@
-# Gestion d'équipe de football
+# FUTeamBuilder
 
 ## Description
 Une application web pour gérer une équipe de football, permettant l'ajout, la modification et la suppression des joueurs. L'interface est responsive et s'adapte aux différentes tailles d'écran, y compris les mobiles et les tablettes.
@@ -17,4 +17,4 @@ Une application web pour gérer une équipe de football, permettant l'ajout, la 
 ## Installation
 Clonez le dépôt :
 ```bash
-git clone https://github.com/votre-utilisateur/votre-repo.git
+git clone https://github.com/saalmahm/FUTeamBuilder.git 
