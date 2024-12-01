@@ -9,8 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const teamNameDisplay = document.getElementById("teamNameDisplay");
     const closeAddModalButton = document.querySelector(".close-add-modal");
     const playerForm = document.getElementById("playerForm");
+    const formationSelect = document.getElementById("select");
     let selectedPosition = null;
     const selectedPlayers = new Set();
+
+    formationSelect.addEventListener("change", (event) => {
+        updateFormation(event.target.value);
+    });
 
     plusImages.forEach(img => {
         img.addEventListener("click", function () {
@@ -105,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p><strong>Dribbling:</strong> ${player.dribbling}</p>
                             <p><strong>Defending:</strong> ${player.defending}</p>
                             <p><strong>Physical:</strong> ${player.physical}</p>
-
                         </div>
                     `;
                     playerCard.addEventListener("click", function () {
@@ -143,4 +147,48 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
+
+    function updateFormation(formation) {
+        const positions = {
+            "442": {
+                "GK-container": { top: "470px", left: "45%" },
+                "CB1-container": { top: "380px", left: "29%" },
+                "CB2-container": { top: "380px", left: "60%" },
+                "LB-container": { top: "380px", left: "8%" },
+                "RB-container": { top: "380px", left: "80%" },
+                "CM1-container": { top: "190px", left: "29%" },
+                "CM2-container": { top: "190px", left: "60%" },
+                "CM3-container": { top: "190px", left: "80%" },
+                "LW-container": { top: "190px", left: "7%" },
+                "RW-container": { top: "0px", left: "60%" },
+                "ST-container": { top: "0px", left: "29%" }
+            },
+            "433": {
+                "GK-container": { top: "470px", left: "45%" },
+                "CB1-container": { top: "380px", left: "29%" },
+                "CB2-container": { top: "380px", left: "60%" },
+                "LB-container": { top: "380px", left: "8%" },
+                "RB-container": { top: "380px", left: "80%" },
+                "CM1-container": { top: "220px", left: "45%" },
+                "CM2-container": { top: "220px", left: "20%" },
+                "CM3-container": { top: "220px", left: "70%" },
+                "LW-container": { top: "35px", left: "20%" },
+                "RW-container": { top: "35px", left: "70%" },
+                "ST-container": { top: "35px", left: "45%" }
+            }
+        };
+
+        const formationPositions = positions[formation];
+        if (formationPositions) {
+            for (const [id, pos] of Object.entries(formationPositions)) {
+                const container = document.getElementById(id);
+                if (container) {
+                    container.style.top = pos.top;
+                    container.style.left = pos.left;
+                }
+            }
+        }
+    }
+    // initialiser la formation 4-4-2 par defaut
+    updateFormation("442");
 });
